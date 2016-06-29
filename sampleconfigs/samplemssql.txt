@@ -1,0 +1,30 @@
+#-Metadata----------------------------------------------------#
+#   Filename: samplemssql.txt          (Update: 2016-06-29)   #
+#-Info--------------------------------------------------------#
+#   Sample MSSQL server behavior for opencanary.conf          #
+#   (https://github.com/sk4ro/opencanary)                     #
+#-Author(s)---------------------------------------------------#
+#   sk4ro - https://twitter.com/AnarchistDalek                #
+#   Some features appropriated from g0tmi1k's os-scripts      #
+#   (https://github.com/g0tmi1k/os-scripts)                   #
+#-Operating System--------------------------------------------#
+#   Designed for: CentOS 7.0 (VM - Virtualbox)                #
+#   Tested on: CentOS 7.0 VM, XUbuntu 16.04 VM                #
+#   PLACEHOLDER FOR OTHER OS FUNCTIONALITY                    #
+#   PLACEHOLDER FOR OTHER OS FUNCTIONALITY                    #
+#-License-----------------------------------------------------#
+#   MIT License ~ http://opensource.org/licenses/MIT          #
+#-Notes-------------------------------------------------------#
+#                                                             #
+#   Edit as necessary and paste into your opencanary.conf     #
+#                                                             #
+#-------------------------------------------------------------#
+
+{
+    "mssql.enabled": true,
+    "mssql.port": 1433,
+    "mssql.version": "2012",
+    "rdp.enabled": true,
+    "rdp.port", 3389,
+[..] # logging configuration
+}

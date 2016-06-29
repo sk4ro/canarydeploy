@@ -1,0 +1,31 @@
+#-Metadata----------------------------------------------------#
+#   Filename: samplemysql.txt          (Update: 2016-06-29)   #
+#-Info--------------------------------------------------------#
+#   Sample MySQL server behavior for opencanary.conf          #
+#   (https://github.com/sk4ro/opencanary)                     #
+#-Author(s)---------------------------------------------------#
+#   sk4ro - https://twitter.com/AnarchistDalek                #
+#   Some features appropriated from g0tmi1k's os-scripts      #
+#   (https://github.com/g0tmi1k/os-scripts)                   #
+#-Operating System--------------------------------------------#
+#   Designed for: CentOS 7.0 (VM - Virtualbox)                #
+#   Tested on: CentOS 7.0 VM, XUbuntu 16.04 VM                #
+#   PLACEHOLDER FOR OTHER OS FUNCTIONALITY                    #
+#   PLACEHOLDER FOR OTHER OS FUNCTIONALITY                    #
+#-License-----------------------------------------------------#
+#   MIT License ~ http://opensource.org/licenses/MIT          #
+#-Notes-------------------------------------------------------#
+#                                                             #
+#   Edit as necessary and paste into your opencanary.conf     #
+#                                                             #
+#-------------------------------------------------------------#
+
+{
+     "mysql.banner": "5.5.43-0ubuntu0.14.04.1",
+     "mysql.enabled": true,
+     "mysql.port": 3306,
+     "ssh.enabled": true,
+     "ssh.port": 22,
+     "ssh.version": "SSH-2.0-OpenSSH_5.1p1 Debian-4",
+     [..] # logging configuration
+}

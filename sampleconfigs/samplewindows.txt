@@ -1,0 +1,48 @@
+#-Metadata----------------------------------------------------#
+#   Filename: samplewindows.txt        (Update: 2016-06-29)   #
+#-Info--------------------------------------------------------#
+#   Sample Windows server behavior for opencanary.conf        #
+#   (https://github.com/sk4ro/canarydeploy)                   #
+#-Author(s)---------------------------------------------------#
+#   sk4ro - https://twitter.com/AnarchistDalek                #
+#   Some features appropriated from g0tmi1k's os-scripts      #
+#   (https://github.com/g0tmi1k/os-scripts)                   #
+#-Operating System--------------------------------------------#
+#   Designed for: CentOS 7.0 (VM - Virtualbox)                #
+#   Tested on: CentOS 7.0 VM, XUbuntu 16.04 VM                #
+#   PLACEHOLDER FOR OTHER OS FUNCTIONALITY                    #
+#   PLACEHOLDER FOR OTHER OS FUNCTIONALITY                    #
+#-License-----------------------------------------------------#
+#   MIT License ~ http://opensource.org/licenses/MIT          #
+#-Notes-------------------------------------------------------#
+#                                                             #
+#   Edit as necessary and paste into your opencanary.conf     #
+#                                                             #
+#-------------------------------------------------------------#
+
+{
+    "smb.auditfile": "/var/log/samba-audit.log",
+    "smb.configfile": "/etc/samba/smb.conf",
+    "smb.domain": "corp.acme.com",
+    "smb.enabled": true,
+    "smb.filelist": [
+       {
+            "name": "launchcodes.pdf",
+            "type": "PDF"
+       },
+       {
+         "name": "passwords.docx",
+         "type": "DOCX"
+       }
+    ],
+    "smb.mode": "workgroup",
+    "smb.netbiosname": "FILESERVER",
+    "smb.serverstring": "Windows 2003 File Server",
+    "smb.sharecomment": "Office documents",
+    "smb.sharename": "Documents",
+    "smb.sharepath": "/changeme",
+    "smb.workgroup": "OFFICE",
+    "rdp.enabled": true,
+    "rdp.port", 3389,
+    [..] # logging configuration
+}

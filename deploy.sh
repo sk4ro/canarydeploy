@@ -1,23 +1,23 @@
 #!/bin/bash
 #-Metadata----------------------------------------------------#
-#  Filename: deploy.sh             (Update: 2016-06-28)       #
+#   Filename: skynet.sh                (Update: 2016-06-29)   #
 #-Info--------------------------------------------------------#
-#  Linux auto-deploy script for opencanaryd                   #
-#  (https://github.com/thinkst/opencanary)                    #
+#   Linux auto-deploy script for opencanary-correlator        #
+#   (https://github.com/thinkst/opencanary-correlator)        #
 #-Author(s)---------------------------------------------------#
-#  sk4ro - https://twitter.com/AnarchistDalek                 #
-#  Some features appropriated from g0tmi1k's os-scripts       #
-#  (https://github.com/g0tmi1k/os-scripts)                    #
+#   sk4ro - https://twitter.com/AnarchistDalek                #
+#   Some features appropriated from g0tmi1k's os-scripts      #
+#   (https://github.com/g0tmi1k/os-scripts)                   #
 #-Operating System--------------------------------------------#
-#  Designed for: CentOS 7.0 (VM - Virtualbox)                 #
-#  Tested on: CentOS 7.0 VM, XUbuntu 16.04 VM                 #
-#  PLACEHOLDER FOR OTHER OS FUNCTIONALITY                     #
-#  PLACEHOLDER FOR OTHER OS FUNCTIONALITY                     #
+#   Designed for: CentOS 7.0 (VM - Virtualbox)                #
+#   Tested on: CentOS 7.0 VM, XUbuntu 16.04 VM                #
+#   PLACEHOLDER FOR OTHER OS FUNCTIONALITY                    #
+#   PLACEHOLDER FOR OTHER OS FUNCTIONALITY                    #
 #-License-----------------------------------------------------#
-#  MIT License ~ http://opensource.org/licenses/MIT           #
+#   MIT License ~ http://opensource.org/licenses/MIT          #
 #-Notes-------------------------------------------------------#
 #                                                             #
-#   For great justice, start this script from a virtualenv.   #
+#   Start this script from an active virtualenv.              #
 #                                                             #
 #-------------------------------------------------------------#
 
@@ -64,32 +64,32 @@ do
 			env ARCHFLAGS="-arch x86_64" LDFLAGS="-L/opt/local/lib" CFLAGS="-I/opt/local/include" pip install cryptography
 			;;
 		"4")
-			echo "You have chosen OSX (Homebrew). Installing dependencies..."
+			echo "You have chosen OSX (Homebrew). Installing dependencies... "
 			brew install openssl
 			env ARCHFLAGS="-arch x86_64" LDFLAGS="-L/usr/local/opt/openssl/lib" CFLAGS="-I/usr/local/opt/openssl/include" pip install cryptography
 			;;
 		"5")
-			echo "Exiting."
+			echo "Exiting. "
 			break
 			;;
 		"")
-			echo "Please enter the number of your menu choice [1-5]"
+			echo "Please enter a number between 1 and 5. "
+			exit 1
+			;;
 		*)
-			echo "Please enter the number of your menu choice [1-5]"
+			echo "Please enter a number between 1 and 5. "
 			exit 1
 			;;
 	esac
 done
 
-echo -e " ${BLUE}[*]${RESET} ${BOLD}OpenCanary auto-deploy script${RESET}"
-
-echo -e " ${YELLOW}[?]${RESET} ${BOLD}Please enter the name of this canary:${RESET}"
+echo -e " ${YELLOW}[?]${RESET} ${BOLD}Please enter the name of this canary:${RESET} "
 
 read canary
 
 pip install opencanary > /dev/null 2>&1 # Install opencanary via pip, suppressing installer output
 
-echo -e " ${BLUE}[*]${RESET} ${BOLD}Installation complete. Generating config and applying SPACE MAGIC!${RESET}"
+echo -e " ${BLUE}[*]${RESET} ${BOLD}Installation complete. Generating config and applying SPACE MAGIC!${RESET} "
 
 # Generate config while suppressing output, replace default canary name with user input, remove hpfeeds stuff
 # Sed in-place the generated config template to name the canary
@@ -97,6 +97,6 @@ echo -e " ${BLUE}[*]${RESET} ${BOLD}Installation complete. Generating config and
 # https://github.com/thinkst/opencanary/issues/9
 opencanaryd --copyconfig > /dev/null 2>&1 && sed -i 's/opencanary-1/'$canary'/' ~/.opencanary.conf && sed -i 58,66d ~/.opencanary.conf
 
-echo -e " ${GREEN}[!]${RESET} ${BOLD}Stay safe out there. (Stop with opencanaryd --stop) ${RESET}"
+echo -e " ${GREEN}[!]${RESET} ${BOLD}Stay safe out there. (Stop with opencanaryd --stop) ${RESET} "
 
 opencanaryd --start
