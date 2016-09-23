@@ -25,11 +25,11 @@ Set up a centralized correlator using the README at https://github.com/thinkst/o
 </ul>
 
 #Install - opencanary
-First, we create our virtual environment:
+First, create your virtual environment:
 <pre><code>$ virtualenv envname/ 
 $ . envname/bin/activate</code></pre>
 
-Next, we invoke this command to install:
+Next, invoke this command to install:
 
 <pre><code>$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/sk4ro/canarydeploy/master/deploy.sh)"</code></pre>
 
