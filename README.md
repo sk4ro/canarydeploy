@@ -29,9 +29,8 @@ First, create your virtual environment:
 <pre><code>$ virtualenv envname/ 
 $ . envname/bin/activate</code></pre>
 
-Next, invoke this command to install:
-
-<pre><code>$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/sk4ro/canarydeploy/master/deploy.sh)"</code></pre>
+Next, execute the script locally, or invoke this command:
+<pre><code>$ wget https://raw.githubusercontent.com/sk4ro/canarydeploy/master/deploy.sh && chmod 700 deploy.sh && ./deploy.sh</code></pre>
 
 #To-Do:
 <ul>
